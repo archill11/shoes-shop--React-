@@ -1,0 +1,33 @@
+.card {
+    position: relative;
+    // width: 200px;
+    height: 300px;
+    padding: 5px;
+    display: grid;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background:  rgba(255,255,255,1);
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    &:hover {
+        box-shadow: 0px 14px 30px rgba(0,0,0,0.5);
+        transform: translateY(-5px);
+    }
+}
+.card__button {
+    padding: 0;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+.card__bottom {
+    display: grid;
+    grid-auto-flow: column;
+}
+.card__price {
+    display: grid;
+}
+.cart__like {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    cursor: pointer;
+}

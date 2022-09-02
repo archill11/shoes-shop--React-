@@ -1,0 +1,26 @@
+.card_list {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 15px;
+    justify-content: space-between;
+    
+}
+
+.main_title {
+    height: 30px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    span {
+        font-size: 25px;
+        font-weight: 700;
+    }
+}
+
+.main {
+    padding: 30px;
+    background-color: rgb(200, 239, 247);
+    display: grid;
+    gap: 20px;
+}

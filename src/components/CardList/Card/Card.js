@@ -1,24 +1,41 @@
-// import {Routes, Route} from "react-router-dom";
-import './Card.scss';
+
+import { useState } from 'react';
+import styles from './Card.module.scss';
 
 
 
 
 const Card = (props) => {
 
+  const [inCart, setInCart] = useState(false)
   
+  const addToCart = () => {
+    if (!inCart) {
+      props.addToCartTotal(props.cartTotal + props.price)
+      props.addToCart()
+      
+    }else{
+      props.addToCartTotal(props.cartTotal - props.price)
+      props.remFromCart()
+
+    }
+    
+    setInCart(prev => !prev)
+  }
+
+
   return (
-      <div className="card ">
-        <img className='cart__like' src="/img/heart.svg" height={20} alt="like"></img>
-        <img width={180} height={130} src={props.img} alt="1" />
+      <div className={styles.card}>
+        <img className={styles.like} src="/img/heart.svg" height={20} alt="like"></img>
+        <img width={225} height={150} src={props.img} alt="1" />
         <p>{props.title}</p>
-        <div className="card__bottom">
-            <div className="card__price">
+        <div className={styles.bottom}>
+            <div className={styles.price}>
                 <span>цена:</span>
                 <b>{props.price} руб.</b>
             </div>
-            <button className='card__button '>
-                <img src="/img/plus.svg" alt="plus" />
+            <button className={styles.button } onClick={addToCart}>
+                <img height={24} src={inCart ? "/img/check.svg" : "/img/plus.svg"} alt="addToCart" />
             </button>
         </div>
       </div>

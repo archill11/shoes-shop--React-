@@ -7,6 +7,7 @@
 }
 
 .drawer {
+    z-index: 999;
     padding: 20px;
     position: absolute;
     right: 0;
@@ -31,7 +32,11 @@
 }
 
 .list_items {
+    display: grid;
+    gap: 10px;
     overflow: auto;
+    // align-self: start;
+    align-content: flex-start;
 }
 
 .item {
@@ -40,7 +45,9 @@
     display: grid;
     grid-auto-flow: column;
     align-items: center;
-
+    min-height: 100px;
+    max-height: 110px;
+    align-self: start;
 }
 
 .buy_btn {

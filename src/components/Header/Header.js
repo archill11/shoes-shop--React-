@@ -2,7 +2,7 @@ import { LogoSvg } from '../LogoSvg/LogoSvg';
 
 import './Header.scss'
 
-const Header = () => {
+const Header = (props) => {
     return(
         <header className='header'>
             <div className="header__logo">
@@ -10,9 +10,9 @@ const Header = () => {
             </div>
             <div className="header__buttons">
                 <ul className="header__cart">
-                    <li>
+                    <li onClick={props.opnCart}>
                         <img src="/img/shopping-cart-outline-svgrepo-com.svg" height={20} alt="cart"></img>
-                        <span className="cart__total">1200р</span>
+                        <span className="cart__total">{props.cartTotal} руб.</span>
                     </li>
                     <li>
                         <img src="/img/heart.svg" height={20} alt="like"></img>

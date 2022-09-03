@@ -1,6 +1,6 @@
 
+import { useState, useEffect } from 'react';
 import styles from './Drawer.module.scss';
-
 
 
 
@@ -8,19 +8,22 @@ const Drawer = (props) => {
 
     const cartItems = props.cartItems.map(item => {
         return (
-            <div className={styles.item} key={item.id}>
+            <div className={styles.item} key={item.title+item.price}>
                 <img width={70} src={item.img} alt="thumbl" />
                 <div className="drawer__item-info">
                     <p>{item.title}</p>
                     <b>{item.price}</b>
                 </div>
                 <img className={styles.remove_item_btn + ' cp'} height={25} src="/img/x-circle.svg" alt="remove-item" 
-                    onClick={() => props.remFromCart(item.id)}/>
+                    onClick={() => {
+                        
+                        props.remFromCart(item.id)}
+                    }/>
             </div>
         )
     })
-  
-  return (
+
+    return (
     <>
         <div className={styles.overlay} onClick={props.clseCart}></div>
         <div className={styles.drawer}>
@@ -29,7 +32,7 @@ const Drawer = (props) => {
                 <img onClick={props.clseCart} className={styles.close_btn + ' cp'} height={25} src="/img/x-circle.svg" alt="close-btn" />
             </div>
             <div className={styles.list_items}>
-                {cartItems}
+                {cartItems.length > 0 ? cartItems : <h2 className={styles.emptyCartTitle}>Корзина пустая...</h2> }
             </div>
             <span>Итого: {props.cartTotal}руб.</span>
             <div className={styles.buy_btn}>
@@ -37,7 +40,7 @@ const Drawer = (props) => {
             </div>
         </div>
     </>
-  );
+    );
 }
 
 export {Drawer};

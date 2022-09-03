@@ -24,3 +24,11 @@
     display: grid;
     gap: 20px;
 }
+
+.emptyCartTitle {
+    justify-self: center;
+    border: 1px dashed #000;
+    padding: 32px 81px;
+    border-radius: 17px;
+    margin-left: 50vw;
+}

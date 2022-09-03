@@ -6,28 +6,36 @@ import styles from './Card.module.scss';
 
 
 const Card = (props) => {
-
+  const {favorited = false} = props
   const [inCart, setInCart] = useState(false)
+  const [inFav, setInFav] = useState(favorited)
   
   const addToCart = () => {
     if (!inCart) {
-      props.addToCartTotal(props.cartTotal + props.price)
+      props.addToCartTotal(prev=> prev + props.price)
       props.addToCart()
       
     }else{
-      props.addToCartTotal(props.cartTotal - props.price)
+      props.addToCartTotal(prev=> prev - props.price)
       props.remFromCart()
-
     }
-    
     setInCart(prev => !prev)
   }
 
+  const addTofav = () => {
+    if (!inFav) {
+      props.addTofav()
+    }else{
+      props.remFromFav()
+    }
+    setInFav(prev => !prev)
+  }
 
   return (
       <div className={styles.card}>
-        <img className={styles.like} src="/img/heart.svg" height={20} alt="like"></img>
-        <img width={225} height={150} src={props.img} alt="1" />
+        <img className={styles.like} src={inFav ? "/img/heart--red.svg" : "/img/heart.svg"} height={20} alt="like"
+              onClick={addTofav}></img>
+        <img width={225} height={150} src={props.img} alt="thumbl" />
         <p>{props.title}</p>
         <div className={styles.bottom}>
             <div className={styles.price}>

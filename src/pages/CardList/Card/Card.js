@@ -1,22 +1,19 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 import styles from './Card.module.scss';
 
 
 
-
 const Card = (props) => {
-  const {favorited = false} = props
-  const [inCart, setInCart] = useState(false)
+  const {favorited = false, addedCart = false} = props
+  const [inCart, setInCart] = useState(addedCart)
   const [inFav, setInFav] = useState(favorited)
   
   const addToCart = () => {
     if (!inCart) {
-      props.addToCartTotal(prev=> prev + props.price)
       props.addToCart()
-      
     }else{
-      props.addToCartTotal(prev=> prev - props.price)
       props.remFromCart()
     }
     setInCart(prev => !prev)
@@ -30,6 +27,14 @@ const Card = (props) => {
     }
     setInFav(prev => !prev)
   }
+
+  useEffect(() => {
+    setInCart(addedCart)
+  }, [props.cartItems])
+
+  useEffect(() => {
+    setInFav(favorited)
+  }, [props.favItems])
 
   return (
       <div className={styles.card}>

@@ -1,0 +1,27 @@
+.order {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 20px;
+    overflow: auto;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 10px;
+    span {
+        
+    }
+}
+
+.order_list {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 50px;
+    justify-content: space-between;
+}
+.orderInfo {
+    width: 130px;
+    padding: 7px;
+    background-color: beige;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}

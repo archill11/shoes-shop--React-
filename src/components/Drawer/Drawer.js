@@ -6,6 +6,8 @@ import styles from './Drawer.module.scss';
 
 const Drawer = (props) => {
 
+    
+
     const cartItems = props.cartItems.map(item => {
         return (
             <div className={styles.item} key={item.title+item.price}>
@@ -14,10 +16,10 @@ const Drawer = (props) => {
                     <p>{item.title}</p>
                     <b>{item.price}</b>
                 </div>
+                {console.log('thisID:', item.thisID)}
                 <img className={styles.remove_item_btn + ' cp'} height={25} src="/img/x-circle.svg" alt="remove-item" 
                     onClick={() => {
-                        
-                        props.remFromCart(item.id)}
+                        props.remFromCart(item.thisID)}
                     }/>
             </div>
         )
@@ -36,7 +38,7 @@ const Drawer = (props) => {
             </div>
             <span>Итого: {props.cartTotal}руб.</span>
             <div className={styles.buy_btn}>
-                <button className='cp'><span>Оформить заказ</span></button>
+                <button onClick={() => props.checkout()} className='cp'><span>Оформить заказ</span></button>
             </div>
         </div>
     </>

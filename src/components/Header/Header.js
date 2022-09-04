@@ -23,7 +23,9 @@ const Header = (props) => {
                         </Link>
                     </li>
                     <li className="header__accaunt">
-                    <img src="/img/account.svg" height={20} alt="cart"></img>
+                        <Link to="/cabinet">
+                            <img src="/img/account.svg" height={20} alt="cart"></img>
+                        </Link>
                     </li>
                 </ul>
             </div>

@@ -13,7 +13,7 @@ const Drawer = (props) => {
             <div className={styles.item} key={item.title+item.price}>
                 <img width={70} src={item.img} alt="thumbl" />
                 <div className="drawer__item-info">
-                    <p>{item.title}</p>
+                    <p>{item.title.slice(0, 25)}...</p>
                     <b>{item.price}</b>
                 </div>
                 {console.log('thisID:', item.thisID)}

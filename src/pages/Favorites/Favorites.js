@@ -7,7 +7,7 @@ import styles from '../CardList/CardList.module.scss';
 
 const Favorites = (props) => {
   const cardList = props.favItems
-                        .filter(item => item.title.toLowerCase().includes(props.searchVal.toLowerCase()))
+                        .filter(item => item.title.toLowerCase().includes(props.searchVal.trim().toLowerCase()))
                         .map(item => {
                           const {id, title, price, img} = item
                           return (

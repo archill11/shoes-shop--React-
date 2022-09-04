@@ -9,6 +9,7 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: 0 30px;
     border-bottom: 1px solid #eaeaea;
+    border-radius: 6px;
 }
 .header__logo {
     position: relative;
@@ -24,9 +25,14 @@
 }
 .header__cart {
     display: grid;
-    gap: 12px;
+    gap: 20px;
     grid-auto-flow: column;
     cursor: pointer;
+    .cartLi {
+        display: grid;
+        grid-auto-flow: column;
+        align-items:center
+    }
 }
 
 

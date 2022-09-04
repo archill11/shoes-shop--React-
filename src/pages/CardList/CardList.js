@@ -12,7 +12,7 @@ const CardList = (props) => {
   const sceletons = new Array(16).fill(<Sceleton style={{boxShadow: 'rgb(0 0 0 / 9%) 5px 3px 27px', borderRadius: "37px", padding: "10px"}}/>)
 
   const cardList = props.shoesData
-                          .filter(item => item.title.toLowerCase().includes(props.searchVal.toLowerCase()))
+                          .filter(item => item.title.toLowerCase().includes(props.searchVal.trim().toLowerCase()))
                           .map(item => {
                             const {id, title, price, img} = item
                             return (

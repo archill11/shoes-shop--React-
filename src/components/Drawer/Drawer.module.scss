@@ -43,10 +43,11 @@
     padding: 10px;
     border: 1px solid #000;
     display: grid;
+    grid-template-columns: auto 1fr auto;
     grid-auto-flow: column;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
     min-height: 100px;
     max-height: 110px;
     align-self: start;

@@ -29,7 +29,7 @@ const Cabinet = (props) => {
     // console.log('ordrrs:',orders);
     const ordersList = 
         orders
-            .filter(item => item.id.toLowerCase().includes(props.searchVal.toLowerCase()))
+            .filter(item => item.id.toLowerCase().includes(props.searchVal.trim().toLowerCase()))
             .map(item => {
                 // console.log('order:',item);
                 const {id, total} = item
@@ -62,7 +62,7 @@ const Cabinet = (props) => {
     <main className={styles.main}>
         <div className={styles.main_title}>
             <span>Мои заказы</span>
-            <SearchInput searchVal={props.searchVal} placeholder={'Найти...'} searchByVal={props.searchByVal}/>
+            <SearchInput searchVal={props.searchVal} placeholder={'Найти заказ №...'} searchByVal={props.searchByVal}/>
         </div>
         <div className={style.order_list}>
             {loading ? sceletons 

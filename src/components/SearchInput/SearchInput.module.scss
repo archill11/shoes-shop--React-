@@ -5,3 +5,9 @@
     border: 2px solid rgba(0, 0, 0, .1);
     border-radius: 6px;
 }
+
+@media (max-width: 525px) {
+    .input_search {
+      width: 150px;
+    }
+  }

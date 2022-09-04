@@ -69,3 +69,25 @@
     border-radius: 17px;
     margin-top: 178px;
 }
+
+
+
+
+@media (max-width: 525px) {
+    .drawer {
+        width: 65vw
+    }
+    .item {
+        max-height: 150px;
+    }
+    .item_info > * {
+        margin: 3px;
+    }
+}
+
+@media (max-width: 525px) {
+    .drawer {
+        width: 85vw
+    }
+}
+

@@ -104,3 +104,16 @@
             transform: translateX(0px) rotate(180deg);
         }
     }
+
+
+@media (max-width: 525px) {
+    .header__cart {
+        gap: 10px;
+    }
+    .header > a { 
+        transform: scale(0.6);
+    }
+    .header {
+        padding: 0 20px;
+    }
+}

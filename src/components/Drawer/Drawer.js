@@ -11,7 +11,7 @@ const Drawer = (props) => {
         return (
             <div className={styles.item} key={item.title+item.price}>
                 <img width={70} src={item.img} alt="thumbl" />
-                <div className="drawer__item-info">
+                <div className={styles.item_info}>
                     <p>{item.title.slice(0, 25)}...</p>
                     <b>{item.price}</b>
                 </div>

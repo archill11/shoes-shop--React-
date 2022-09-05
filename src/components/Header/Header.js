@@ -6,7 +6,7 @@ import './Header.scss'
 const Header = (props) => {
     return(
         <header className='header'>
-            <Link to="">
+            <Link to="/">
                 <div className="header__logo cp">
                     <LogoSvg className="logo__img--anim header__logo__img" fill={'#FF1493'} />
                 </div>
@@ -18,11 +18,11 @@ const Header = (props) => {
                         <span className="cart__total">{props.cartTotal} руб.</span>
                     </li>
                     <li>
-                        <Link to="favorites">
+                        <Link to="/favorites">
                             <img src="img/heart.svg" height={30} alt="like"></img>
                         </Link>
                     </li>
-                    <li className="header__accaunt">
+                    <li className="/header__accaunt">
                         <Link to="cabinet">
                             <img src="img/account.svg" height={30} alt="cart"></img>
                         </Link>

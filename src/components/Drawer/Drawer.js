@@ -35,9 +35,9 @@ const Drawer = (props) => {
             <div className={styles.list_items}>
                 {cartItems.length > 0 ? cartItems : <h2 className={styles.emptyCartTitle}>Корзина пустая...</h2> }
             </div>
-            <span>Итого: {props.cartTotal}руб.</span>
+            {cartItems.length > 0 ? <span>Итого: {props.cartTotal}руб.</span> : null}
             <div className={styles.buy_btn}>
-                <button onClick={() => props.checkout()} className='cp'><span>Оформить заказ</span></button>
+                {cartItems.length > 0 ? <button onClick={() => props.checkout()} className='cp'><span>Оформить заказ</span></button> : null}
             </div>
         </div>
     </>

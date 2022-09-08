@@ -105,7 +105,7 @@ const App = (props) => {
 
   const checkout = async () => {
     await axios.post('https://6311eb0df5cba498da884e3e.mockapi.io/orders', {items: cartItems, total: cartTotal})
-    alert('Ваш заказ успешно оформлен')
+    alert('Ваш заказ успешно оформлен 🎁')
 
   }
 

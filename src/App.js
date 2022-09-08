@@ -5,9 +5,9 @@ import { CardList } from './pages/CardList/CardList';
 import { Drawer } from './components/Drawer/Drawer';
 import { Header } from './components/Header/Header';
 import { Favorites } from "./pages/Favorites/Favorites";
+import { Cabinet } from "./pages/Cabinet/Cabinet";
 
 import styles from './App.module.scss';
-import { Cabinet } from "./pages/Cabinet/Cabinet";
 
 // const shoesData = [
 //   {id:1, title: "Мужские кроссовки New Balance 550", price: 12999, img: "/img/1img.webp" },
@@ -106,7 +106,6 @@ const App = (props) => {
   const checkout = async () => {
     await axios.post('https://6311eb0df5cba498da884e3e.mockapi.io/orders', {items: cartItems, total: cartTotal})
     alert('Ваш заказ успешно оформлен 🎁')
-
   }
 
   const searchByVal = (val) => {
